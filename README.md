@@ -48,10 +48,10 @@ https://mvnrepository.com/
 
 Ce projet a été créé en faisant:
 -new project / maven / maven project
-archetype : maven-archetype-webapp
-group-id: com.bibliotheque
-artifact-id: biblioJavaWebJdbc
-package: com.bibliotheque
+-archetype : maven-archetype-webapp
+-group-id: com.bibliotheque
+-artifact-id: biblioJavaWebJdbc
+-package: com.bibliotheque
 
 -----------------------------
 
