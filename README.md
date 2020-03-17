@@ -45,14 +45,12 @@ PS: on trouve toutes les définitions existantes des jar sur le site:
 https://mvnrepository.com/ 
 
 -----------------------------
-
 Ce projet a été créé en faisant:
 -new project / maven / maven project
 -archetype : maven-archetype-webapp
 -group-id: com.bibliotheque
 -artifact-id: biblioJavaWebJdbc
 -package: com.bibliotheque
-
 -----------------------------
 
 WEB APPlication
