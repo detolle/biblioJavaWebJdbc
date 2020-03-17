@@ -97,10 +97,10 @@ JSP
 -EL
 -JSTL
 - Ils permettent un lecture plus simple des jsp et c'est recommandé aujourd'hui
-
+-----------------------------
 - EL permet d'utiliser la notation ${mavar} ou ${maclasse} ou ${maclasse.proprietee}
 - JSTL permet en autre, d'utiliser des if conditionnel ou des boucles forEach
-
+-----------------------------
 - JSTL doit être déclaré en tant que taglib au début de la jsp
 - <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 - signifie que le lettre c sera utilisé comme raccourci
