@@ -24,19 +24,16 @@ projet sous maven (totalement intégré dans eclipse)
 pour importer le projet dans eclipse
 -----------------------------
 - import /maven / existing Maven Project
-choisir le fichier biblioJavaWebJdbc/pom.xml
+- choisir le fichier biblioJavaWebJdbc/pom.xml
 -----------------------------
 
-le fichier pom.xml est le point d'entrée d'un projet maven
------------------------------
-on y trouve les identifiants du projet et les jar utilisés
+- le fichier pom.xml est le point d'entrée d'un projet maven
+- on y trouve les identifiants du projet et les jar utilisés
 -les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiqués pour la compilation
 -pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
 sous lib:
 - /biblioJavaWebJdbc/src/main/webapp/WEB-INF/lib
-
 -le dossier lib est le dossier ou traditionnellement on place les jar,
-
 mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)
 
 Maven solutionne ce problème car on y indique le niveau de version
@@ -59,18 +56,18 @@ Principe
 -----------------------------
 -la navigateur demande une requete (url)
 -la requete est traitée par une servlet ou directement un fichier html ou une jsp
-une jsp est un fichier contenant de l'html et du code java appelée "scriplet", à l'intérieur de balises <% code java %>
+- une jsp est un fichier contenant de l'html et du code java appelée "scriplet", à l'intérieur de balises <% code java %>
 
 Structure d'une web app
 -----------------------------
-/webapp est la racine du projet web, soit l'url "/" ou l'url complete : http://localhost:8080/biblioJavaWebJdbc/
-/webapp/WEB-INF/ est un dossier interne invible de l'extérieur
-/webapp/WEB-INF/classes contient les classes compilés (invisible dans la vue "project explorer" d'eclipse) 
+- /webapp est la racine du projet web, soit l'url "/" ou l'url complete : http://localhost:8080/biblioJavaWebJdbc/
+- /webapp/WEB-INF/ est un dossier interne invible de l'extérieur
+- /webapp/WEB-INF/classes contient les classes compilés (invisible dans la vue "project explorer" d'eclipse) 
 
 Configuration
 -----------------------------
-le fichier de con est traditionnelement le web.xml, mais optionnel depuis la version 3.0 des servlets
-/biblioJavaWebJdbc/src/main/webapp/WEB-INF/web.xml
+- le fichier de conf est traditionnellement le web.xml, mais optionnel depuis la version 3.0 des servlets
+- /biblioJavaWebJdbc/src/main/webapp/WEB-INF/web.xml
 
 Servlet
 -----------------------------
