@@ -33,7 +33,7 @@ pour importer le projet dans eclipse
 -pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
 sous lib:
 - /biblioJavaWebJdbc/src/main/webapp/WEB-INF/lib
--le dossier lib est le dossier ou traditionnellement on place les jar,
+- le dossier lib est le dossier ou traditionnellement on place les jar,
 mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)
 
 Maven solutionne ce problème car on y indique le niveau de version
@@ -71,39 +71,40 @@ Configuration
 
 Servlet
 -----------------------------
-C'est une classe java qui étend HttpServlet, disponible dans un server java
-Une servlet peut effectuer des traitements et renvoyer un contenu via hhttp, ce contenu pourra être du html, du json, du pdf, etc.
-ou rediriger la réponse sur une autre ressource comme sur une jsp
+- C'est une classe java qui étend HttpServlet, disponible dans un server java
+- Une servlet peut effectuer des traitements et renvoyer un contenu via hhttp, ce contenu pourra être du html, du json, du pdf, etc.
+- ou rediriger la réponse sur une autre ressource comme sur une jsp
 
-Pour créer une nouvelle servlet, faire - new / web / servlet
-La servlet a des méthodes, et les plus utilisés sont: init, doGet, doPost
-soit "do"+method doGet, doPost, doPut, doDelete, ...
+- Pour créer une nouvelle servlet, faire - new / web / servlet
+- La servlet a des méthodes, et les plus utilisés sont: init, doGet, doPost
+- soit "do"+method doGet, doPost, doPut, doDelete, ...
 
-Normalement, chaque URL traitée par une servlet est configurée dans le web.xml
-mais j'ai utilisé les annotations pour un site plus moderne (v3 et sup), on place l'annolation sur la classe servlet
-@WebServlet("/hello")
-ou hello sera l'url demandé http://localhost:8080/biblioJavaWebJdbc/hello
+- Normalement, chaque URL traitée par une servlet est configurée dans le web.xml
+- Mais j'ai utilisé les annotations pour un site plus moderne (v3 et sup), on place l'annolation sur la classe servlet
+- @WebServlet("/hello")
+- ou hello sera l'url demandé http://localhost:8080/biblioJavaWebJdbc/hello
 
-Attention: une servlet est un singleton (une seule instance tourne alors que l'url peut être demandée en même temps)
-Mettre impérativement les variables/object à l'intérieur des méthodes
-(ne rien mettre en variable de classes, sauf static ou autre variable partagée)
+- Attention: une servlet est un singleton (une seule instance tourne alors que l'url peut être demandée en même temps)
+- Mettre impérativement les variables/object à l'intérieur des méthodes
+- (ne rien mettre en variable de classes, sauf static ou autre variable partagée)
 
-Exemple fourni: HelloServlet, PdfServlet
+- Exemple fourni: HelloServlet, PdfServlet
 
 JSP
 -----------------------------
-Une jsp est compilé à la volée pour en faire une servlet (se retrouve donc dans le /webapp/WEB-INF/classes)
-je n'ai pas utilisé de scriplets <% %> mais des technologies plus moderne et toujours utilisé même avec des framework
+- Une jsp est compilé à la volée pour en faire une servlet (se retrouve donc dans le /webapp/WEB-INF/classes)
+- je n'ai pas utilisé de scriplets <% %> mais des technologies plus moderne et toujours utilisé même avec des framework
 -EL
 -JSTL
-Ils permettent un lecture plus simple des jsp et c'est recommandé aujourd'hui
+- Ils permettent un lecture plus simple des jsp et c'est recommandé aujourd'hui
 
-EL permet d'utiliser la notation ${mavar} ou ${maclasse} ou ${maclasse.proprietee}
-JSTL permet en autre, d'utiliser des if conditionnel ou des boucles forEach
-JSTL doit être déclaré en tant que taglib au début de la jsp
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-signifie que le lettre c sera utilisé comme raccourci
-Exemple: <c:forEach>
+- EL permet d'utiliser la notation ${mavar} ou ${maclasse} ou ${maclasse.proprietee}
+- JSTL permet en autre, d'utiliser des if conditionnel ou des boucles forEach
+
+- JSTL doit être déclaré en tant que taglib au début de la jsp
+- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+- signifie que le lettre c sera utilisé comme raccourci
+- Exemple: <c:forEach>
 
 les scopes
 -----------------------------
