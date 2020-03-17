@@ -74,11 +74,11 @@ Servlet
 - C'est une classe java qui étend HttpServlet, disponible dans un server java
 - Une servlet peut effectuer des traitements et renvoyer un contenu via hhttp, ce contenu pourra être du html, du json, du pdf, etc.
 - ou rediriger la réponse sur une autre ressource comme sur une jsp
-
+--------------
 - Pour créer une nouvelle servlet, faire - new / web / servlet
 - La servlet a des méthodes, et les plus utilisés sont: init, doGet, doPost
 - soit "do"+method doGet, doPost, doPut, doDelete, ...
-
+--------------
 - Normalement, chaque URL traitée par une servlet est configurée dans le web.xml
 - Mais j'ai utilisé les annotations pour un site plus moderne (v3 et sup), on place l'annolation sur la classe servlet
 - @WebServlet("/hello")
@@ -108,27 +108,27 @@ JSP
 
 les scopes
 -----------------------------
-dans les webapp, les variables ont 3 niveaux de portée
--page: la variable/classe ne dure que le temps de la page, ou entre la servlet et la jsp
+- dans les webapp, les variables ont 3 niveaux de portée
+- page: la variable/classe ne dure que le temps de la page, ou entre la servlet et la jsp
 c'est l'usage standard
--session: il est possible de mettre dans l'objet session, des variables propres à un utilisateur connecté (via un cookies généré automatiquement)
--application context: les varaibles sont valables pour tout l'application
+- session: il est possible de mettre dans l'objet session, des variables propres à un utilisateur connecté (via un cookies généré automatiquement)
+- application context: les varaibles sont valables pour tout l'application
 
 MVC
 -----------------------------
-Model=classe entity
-V=view=jsp
-C=controller=servlet
+- Model=classe entity
+- V=view=jsp
+- C=controller=servlet
 
-En MVC, l'url est traité par une servlet qui joue le role de controleur
-Ce controleur utilisera des services/DAO/etc et accèdera aux données via jdbc
+- En MVC, l'url est traité par une servlet qui joue le role de controleur
+- Ce controleur utilisera des services/DAO/etc et accèdera aux données via jdbc
 
--Il place dans la requete (HttpServletRequest) les objets nécessaires à la vues 
-C'est un hashmap avec clé+contenu
-request.setAttribute("maclasse", maclasse);
+- Il place dans la requete (HttpServletRequest) les objets nécessaires à la vues 
+- C'est un hashmap avec clé+contenu
+- request.setAttribute("maclasse", maclasse);
 
--Il redirige la réponse vers la jsp
-request.getRequestDispatcher("/WEB-INF/majsp.jsp").forward(request, response);	
+- Il redirige la réponse vers la jsp
+- request.getRequestDispatcher("/WEB-INF/majsp.jsp").forward(request, response);	
 
 ici, la jsp est placé dans le WEB-INF par sécurité
 En effet, le WEB-INF est inaccessible de l'extérieure et un pirate ne pourra pas demandé la ressource 
