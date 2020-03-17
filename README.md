@@ -83,11 +83,11 @@ Servlet
 - Mais j'ai utilisé les annotations pour un site plus moderne (v3 et sup), on place l'annolation sur la classe servlet
 - @WebServlet("/hello")
 - ou hello sera l'url demandé http://localhost:8080/biblioJavaWebJdbc/hello
-
+-----------
 - Attention: une servlet est un singleton (une seule instance tourne alors que l'url peut être demandée en même temps)
 - Mettre impérativement les variables/object à l'intérieur des méthodes
 - (ne rien mettre en variable de classes, sauf static ou autre variable partagée)
-
+------
 - Exemple fourni: HelloServlet, PdfServlet
 
 JSP
@@ -119,23 +119,22 @@ MVC
 - Model=classe entity
 - V=view=jsp
 - C=controller=servlet
-
+----
 - En MVC, l'url est traité par une servlet qui joue le role de controleur
 - Ce controleur utilisera des services/DAO/etc et accèdera aux données via jdbc
-
+----
 - Il place dans la requete (HttpServletRequest) les objets nécessaires à la vues 
 - C'est un hashmap avec clé+contenu
 - request.setAttribute("maclasse", maclasse);
-
+---
 - Il redirige la réponse vers la jsp
 - request.getRequestDispatcher("/WEB-INF/majsp.jsp").forward(request, response);	
-
-ici, la jsp est placé dans le WEB-INF par sécurité
-En effet, le WEB-INF est inaccessible de l'extérieure et un pirate ne pourra pas demandé la ressource 
-http://localhost:8080/biblioJavaWebJdbc/majsp.jsp ou http://localhost:8080/biblioJavaWebJdbc/WEB-INF/majsp.jsp
-
--La jsp présente les données avec 
-${maclasse.propriete}
+----
+- ici, la jsp est placé dans le WEB-INF par sécurité
+- En effet, le WEB-INF est inaccessible de l'extérieure et un pirate ne pourra pas demandé la ressource 
+- http://localhost:8080/biblioJavaWebJdbc/majsp.jsp ou http://localhost:8080/biblioJavaWebJdbc/WEB-INF/majsp.jsp
+----
+- La jsp présente les données avec ${maclasse.propriete}
 
 
 
