@@ -1,0 +1,49 @@
+<c:out value="Bonjour" /><br/>
+<c:set var="maVariable" value="${param.id}" scope="page" />
+
+${condition ? "some text when true" : "some text when false"}
+
+<c:if test="${empty exemplaire.idExemplaire}">
+<h4><spring:message code="exemplaire.ins"/></h4>
+</c:if>
+
+<c:choose>
+  <c:when test="${personne.civilite == 'Mr'}">
+    Bonjour Monsieur
+  </c:when>
+  <c:when test="${personne.civilite == 'Mme'}">
+    Bonjour Madame
+  </c:when>
+  <c:when test="${personne.civilite == 'Mlle'}">
+    Bonjour Mademoiselle
+  </c:when>
+  <c:otherwise>
+    Bonjour
+  </c:otherwise>
+</c:choose>
+
+<c:forEach begin="1" end="4" var="i">
+<c:out value="${i}"/><br>
+</c:forEach>v
+
+--------------------
+<caption>Liste du catalogue (${fn:length(Catalogue)})</caption>
+
+${ fn:toLowerCase("IL ÉTAIT UNE FOIS") }
+${ fn:substring("Il était une fois", 3, 8) }
+${ fn:indexOf("Il était une fois", "une") }
+${ fn:split("Il était une fois", " ") }
+${ fn:replace("Il&nbsp;était&nbsp;une&nbsp;fois", "&nbsp;", " ") }
+
+${ fn:startsWith("Il était une fois", "Il") }
+${ fn:substringAfter("Il était une fois", "était") }
+${ fn:endsWith("Il était une fois", "fois") }
+
+${ fn:contains("Il était une fois", "une") }
+fn:containsIgnoreCase(string, substring)
+
+${ fn:escapeXml("les <balises> xml & html") }
+retournera "les &lt;balises&gt; xml &amp; html"
+
+${ fn:join( nameArray, " ") }
+retournera "Il était une fois"
