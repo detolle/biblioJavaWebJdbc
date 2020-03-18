@@ -62,11 +62,10 @@ Structure d'une web app
 -----------------------------
 - /webapp est la racine du projet web, soit l'url "/" ou l'url complete : http://localhost:8080/biblioJavaWebJdbc/
 - /webapp/WEB-INF/ est un dossier interne invible de l'extérieur
-- /webapp/WEB-INF/classes contient les classes compilés (invisible dans la vue "project explorer" d'eclipse) 
 
 Configuration
 -----------------------------
-- le fichier de conf est traditionnellement le web.xml, mais optionnel depuis la version 3.0 des servlets
+- le fichier de configuration est traditionnellement le web.xml, mais optionnel depuis la version 3.0 des servlets
 - /biblioJavaWebJdbc/src/main/webapp/WEB-INF/web.xml
 
 Servlet
@@ -77,18 +76,15 @@ Servlet
 --------------
 - Pour créer une nouvelle servlet, faire - new / web / servlet
 - La servlet a des méthodes, et les plus utilisés sont: init, doGet, doPost
-- soit "do"+method doGet, doPost, doPut, doDelete, ...
 --------------
 - Normalement, chaque URL traitée par une servlet est configurée dans le web.xml
-- Mais j'ai utilisé les annotations pour un site plus moderne (v3 et sup), on place l'annolation sur la classe servlet
+- Mais j'ai utilisé les annotations pour un site plus moderne (servlet v3 et sup), on place l'annolation sur la classe servlet
 - @WebServlet("/hello")
 - ou hello sera l'url demandé http://localhost:8080/biblioJavaWebJdbc/hello
 -----------
-- Attention: une servlet est un singleton (une seule instance tourne alors que l'url peut être demandée en même temps)
+- Attention: une servlet n'a qu'une seule instance, alors que l'url peut être demandée en même temps
 - Mettre impérativement les variables/object à l'intérieur des méthodes
-- (ne rien mettre en variable de classes, sauf static ou autre variable partagée)
-------
-- Exemple fourni: HelloServlet, PdfServlet
+- (ne rien mettre en variable de classes, sauf static ou autres variables partagées)
 
 JSP
 -----------------------------
@@ -108,11 +104,11 @@ JSP
 
 les scopes
 -----------------------------
-- dans les webapp, les variables ont 3 niveaux de portée
+- dans les webapp, les variables ont 3 niveaux de portées
 - page: la variable/classe ne dure que le temps de la page, ou entre la servlet et la jsp
 c'est l'usage standard
 - session: il est possible de mettre dans l'objet session, des variables propres à un utilisateur connecté (via un cookies généré automatiquement)
-- application context: les varaibles sont valables pour tout l'application
+- application context: les variables sont valables pour toute l'application
 
 MVC
 -----------------------------
@@ -134,8 +130,16 @@ MVC
 - En effet, le WEB-INF est inaccessible de l'extérieure et un pirate ne pourra pas demandé la ressource 
 - http://localhost:8080/biblioJavaWebJdbc/majsp.jsp ou http://localhost:8080/biblioJavaWebJdbc/WEB-INF/majsp.jsp
 ----
-- La jsp présente les données avec ${maclasse.propriete}
+- La jsp présente les données avec ${maclasse.propriete} en EL/JSTL
 
+l'application biblioJavaWebJdbc
+-----------------------------
+- il y a 3 exemples simples : HelloServlet, PdfServlet et un exemple MVC basique
+- Un CRUD complet sur les exemplaires (pas trop compliqué)
+- L'emprunt et le retour
+-----
+- l'emprunt est assez ardu car il faut gérer 3 étapes, et la serlet ne peut utilisé qu'une seule url
+- il y a donc 3 grands IF suivant les étapes
 
 
 
