@@ -102,9 +102,9 @@ _c'est l'usage standard_
 * application context: les variables sont valables pour toute l'application
 
 ### MVC
-1 Model=classe entity
-2 V=view=jsp
-3 C=controller=servlet
+* Model=classe entity  
+* V=view=jsp  
+* C=controller=servlet  
 
 En MVC, l'url est traité par une servlet qui joue le role de controleur  
 Ce controleur utilisera des services/DAO/etc et accèdera aux données via jdbc  
