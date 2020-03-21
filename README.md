@@ -30,9 +30,8 @@ les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiq
 pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
 sous lib:
 > /biblioJavaWebJdbc/src/main/webapp/WEB-INF/lib  
-* le dossier lib est le dossier ou traditionnellement on place les jar,  
-_mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)_
-
+**le dossier lib est le dossier ou traditionnellement on place les jar,**  
+_mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)_  
 **_Maven solutionne ce problème car on y indique le niveau de version_**
 
 * PS: on trouve toutes les définitions existantes des jar sur le site:
