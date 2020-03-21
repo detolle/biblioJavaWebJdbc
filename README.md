@@ -24,6 +24,7 @@ import /maven / existing Maven Project
 choisir le fichier biblioJavaWebJdbc/pom.xml  
 
 > le fichier pom.xml est le point d'entrée d'un projet maven
+
 **on y trouve les identifiants du projet et les jar utilisés**  
 les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiqués pour la compilation  
 pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
