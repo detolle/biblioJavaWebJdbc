@@ -7,14 +7,12 @@ prerequis
 - [ ] java 11
 - [ ] tomcat 9.x
 -----------------------------
-- installer tomcat 9, 
+* installer tomcat 9, 
 - l'inclure dans eclipse (windows/preference/server/runtime)
-- pour tester si ok
-- creer un projet web/dynamic web project
+- pour tester si ok, creer un projet **web_/dynamic web project_**
 
-dans /WebContent, creer la page index.html ou vous mettez hello dans le body
-
-démarrer le projet avec un clic droit sur le nom du projet dans project explorer, run/run on server
+* dans /WebContent, creer la page index.html ou vous mettez hello dans le body
+* démarrer le projet avec un clic droit sur le nom du projet dans project explorer, run/run on server
 vous devez voir la page créée
 
 ## Maven
@@ -26,12 +24,12 @@ projet sous maven (totalement intégré dans eclipse)
 
 > le fichier pom.xml est le point d'entrée d'un projet maven
 * on y trouve les identifiants du projet et les jar utilisés
-* les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiqués pour la compilation
-* pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
-sous lib:
+- les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiqués pour la compilation
+- pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
+* sous lib:
 > /biblioJavaWebJdbc/src/main/webapp/WEB-INF/lib
-* le dossier lib est le dossier ou traditionnellement on place les jar,
-_mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)_
+- le dossier lib est le dossier ou traditionnellement on place les jar,
+- _mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)_
 
 **_Maven solutionne ce problème car on y indique le niveau de version_**
 
