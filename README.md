@@ -4,8 +4,8 @@ site web en java sans framework
 -----------------------------
 
 prerequis
-[ ] java 11
-[ ] tomcat 9.x
+- [ ] java 11
+- [ ] tomcat 9.x
 -----------------------------
 - installer tomcat 9, 
 - l'inclure dans eclipse (windows/preference/server/runtime)
@@ -25,20 +25,20 @@ projet sous maven (totalement intégré dans eclipse)
 - choisir le fichier biblioJavaWebJdbc/pom.xml
 
 > le fichier pom.xml est le point d'entrée d'un projet maven
-- on y trouve les identifiants du projet et les jar utilisés
--les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiqués pour la compilation
--pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
+* on y trouve les identifiants du projet et les jar utilisés
+* les jar en scope compile ou runtime sont fournis par le serveur, mais sont indiqués pour la compilation
+* pour le pilote oracle (ojdbc8.jar), il y a un soucis de sécurité imposé par oracle, et pour simplifier, je l'ai embarqué dans le projet 
 sous lib:
-###### /biblioJavaWebJdbc/src/main/webapp/WEB-INF/lib
-- le dossier lib est le dossier ou traditionnellement on place les jar,
-mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)
+> /biblioJavaWebJdbc/src/main/webapp/WEB-INF/lib
+* le dossier lib est le dossier ou traditionnellement on place les jar,
+_mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)_
 
--- Maven solutionne ce problème car on y indique le niveau de version --
+**_Maven solutionne ce problème car on y indique le niveau de version_**
 
-PS: on trouve toutes les définitions existantes des jar sur le site:
-https://mvnrepository.com/ 
+* PS: on trouve toutes les définitions existantes des jar sur le site:
+> https://mvnrepository.com/ 
 
-> Ce projet a été créé en faisant:
+###### Ce projet a été créé en faisant:
 * new project / maven / maven project
 * archetype : maven-archetype-webapp
 * group-id: com.bibliotheque
@@ -70,15 +70,15 @@ ou rediriger la réponse sur une autre ressource comme sur une jsp
 > @WebServlet("/hello")
 * ou hello sera l'url demandé http://localhost:8080/biblioJavaWebJdbc/hello
 
-** Attention ** : une servlet n'a qu'une seule instance, alors que l'url peut être demandée en même temps
+**Attention** : une servlet n'a qu'une seule instance, alors que l'url peut être demandée en même temps
 * Mettre impérativement les variables/object à l'intérieur des méthodes
 * (ne rien mettre en variable de classes, sauf static ou autres variables partagées)
 
 ### JSP
 * Une jsp est compilé à la volée pour en faire une servlet (se retrouve donc dans le /webapp/WEB-INF/classes)
 * je n'ai pas utilisé de scriplets <% %> mais des technologies plus moderne et toujours utilisé même avec des framework
-* **EL
-* **JSTL
+* **EL**
+* **JSTL**
 > Ils permettent un lecture plus simple des jsp et c'est recommandé aujourd'hui
 
 * EL permet d'utiliser la notation ${mavar} ou ${maclasse} ou ${maclasse.proprietee}
@@ -121,7 +121,7 @@ ou rediriger la réponse sur une autre ressource comme sur une jsp
 * Un CRUD complet sur les exemplaires (pas trop compliqué)
 * L'emprunt et le retour
 
---l'emprunt est assez ardu car il faut gérer 3 étapes, et la serlet ne peut utilisé qu'une seule url--
+__l'emprunt est assez ardu car il faut gérer 3 étapes, et la serlet ne peut utilisé qu'une seule url__
 
 
 
