@@ -7,10 +7,10 @@ prerequis
 java 11
 tomcat 9.x
 -----------------------------
-installer tomcat 9, 
-l'inclure dans eclipse (windows/preference/server/runtime)
-pour tester si ok
-creer un projet web/dynamic web project
+> installer tomcat 9, 
+> l'inclure dans eclipse (windows/preference/server/runtime)
+> pour tester si ok
+> creer un projet web/dynamic web project
 
 dans /WebContent, creer la page index.html ou vous mettez hello dans le body
 
