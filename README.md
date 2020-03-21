@@ -51,8 +51,11 @@ la requete est traitée par une servlet ou directement un fichier html ou une js
 une jsp est un fichier contenant de l'html et du code java appelée "scriplet", à l'intérieur de balises <% code java %>  
 
 ### Structure d'une web app
-/webapp est la racine du projet web, soit l'url "/" ou l'url complete : http://localhost:8080/biblioJavaWebJdbc/  
+* /src/main/webapp est la racine du projet web, soit l'url "/" ou l'url complete : http://localhost:8080/biblioJavaWebJdbc/  
+on y trouve les pages html/jsp/...  
 /webapp/WEB-INF/ est un dossier interne invible de l'extérieur  
+* /src/main/java est la source des classes java, servlet, classe, etc.  
+
 
 ### Configuration
 le fichier de configuration est traditionnellement le web.xml, mais optionnel depuis la version 3.0 des servlets  
