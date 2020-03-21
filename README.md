@@ -34,7 +34,7 @@ sous lib:
 _mais cette pratique est déconseillée car cela pose des problèmes sur les serveurs de production, où le jar peut déjà exister dans une autre version (exemple: la classe oracle.jdbc.driver.OracleDriver est toujours la même alors que cela peut un une version ojdbc6 ou ojdbc8)_  
 **_Maven solutionne ce problème car on y indique le niveau de version_**
 
-* PS: on trouve toutes les définitions existantes des jar sur le site:
+PS: on trouve toutes les définitions existantes des jar sur le site:
 > https://mvnrepository.com/ 
 
 #### Ce projet a été créé en faisant:
