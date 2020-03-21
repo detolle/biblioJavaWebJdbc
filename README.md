@@ -54,7 +54,7 @@ une jsp est un fichier contenant de l'html et du code java appelée "scriplet", 
 * /src/main/webapp est la racine du projet web, soit l'url "/" ou l'url complete : http://localhost:8080/biblioJavaWebJdbc/  
 on y trouve les pages html/jsp/...  
 /webapp/WEB-INF/ est un dossier interne invible de l'extérieur  
-* /src/main/java est la source des classes java, servlet, classe, etc.  
+* /src/main/java est la source des classes java, servlet, entity, dao, etc.  
 
 
 ### Configuration
