@@ -113,7 +113,7 @@ Il place dans la requete (HttpServletRequest) les objets nécessaires à la vues
 Il redirige la réponse vers la jsp  
 > request.getRequestDispatcher("/WEB-INF/majsp.jsp").forward(request, response);	
 
-**_ici, la jsp est placé dans le WEB-INF par sécurité-_**  
+_ici, la jsp est placé dans le WEB-INF par sécurité-_  
 En effet, le WEB-INF est inaccessible de l'extérieure et un pirate ne pourra pas demandé la ressource  
 
 Enfin, la jsp présente les données avec ${maclasse.propriete} en EL/JSTL  
