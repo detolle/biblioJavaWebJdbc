@@ -8,8 +8,8 @@ prerequis
 - [ ] tomcat 9.x
 -----------------------------
 * installer tomcat 9, 
-- l'inclure dans eclipse (windows/preference/server/runtime)
-- pour tester si ok, creer un projet **web_/dynamic web project_**
+ l'inclure dans eclipse (windows/preference/server/runtime)
+ pour tester si ok, creer un projet **web/dynamic web project**
 
 * dans /WebContent, creer la page index.html ou vous mettez hello dans le body
 * démarrer le projet avec un clic droit sur le nom du projet dans project explorer, run/run on server
