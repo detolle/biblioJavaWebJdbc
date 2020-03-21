@@ -13,7 +13,7 @@
 <form id="form1" action="<%=request.getContextPath()%>/exemplaireUpd" method="post">
 <input type="hidden" name="idExemplaire" value="${exemplaire.idExemplaire}" />
 <!-- ajout de l'hidden status car un input disable n'est pas renvoye par http -->
-<input type="hidden" name="status" value="${exemplaire.status}" id="hstatus"/>
+<%-- <input type="hidden" name="status" value="${exemplaire.status}" id="hstatus"/> --%>
 <div id="erreur" class="text-warning">${erreur}</div>
 
 <fieldset class="form-group">
@@ -33,7 +33,7 @@
 
 <fieldset class="form-group">
 <label for="status">Statut</label>
-<input type="text" class="form-control" name="status" id="status" value="${exemplaire.status}" placeholder="" required/>
+<input type="text" class="form-control" name="status" id="status" value="${exemplaire.status}" placeholder="" readonly="true" required="required"/>
 </fieldset>
 
 <!--input type="button" class="btn btn-dark text-white" onClick="window.history.back()" value="Retour" /-->
@@ -48,7 +48,7 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-document.getElementById("status").disabled = true;
+//document.getElementById("status").disabled = true;
 </script>
 
 </body>

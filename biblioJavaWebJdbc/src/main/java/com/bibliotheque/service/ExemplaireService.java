@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bibliotheque.dao.Dao;
 import com.bibliotheque.dao.IExemplaireDAO;
 import com.bibliotheque.dao.impl.ExemplaireDAO;
 import com.bibliotheque.entity.Exemplaire;
@@ -13,6 +14,7 @@ import com.bibliotheque.util.DataSourceProvider;
 public class ExemplaireService {
 	private Connection conn;
 	private IExemplaireDAO exemplaireDAO;
+//	private Dao exemplaireDAO;
 
 	public ExemplaireService() {
 	}

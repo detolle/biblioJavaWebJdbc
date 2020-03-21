@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bibliotheque.dao.Dao;
 import com.bibliotheque.dao.IExemplaireDAO;
 import com.bibliotheque.entity.Exemplaire;
 import com.bibliotheque.util.DataSourceProvider;
@@ -15,6 +16,7 @@ import com.bibliotheque.util.EnumStatusExemplaire;
 
 
 public class ExemplaireDAO implements IExemplaireDAO {
+//public class ExemplaireDAO implements Dao<Exemplaire> {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	private Connection conn;	
 

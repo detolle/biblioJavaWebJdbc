@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class TestServlet
  */
+
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,7 +25,9 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+//		userDao.getAll().forEach(user -> System.out.println(user.getName()));		
+//		return user.orElseGet( () -> new User("non-existing user", "no-email"));
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
