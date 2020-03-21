@@ -33,7 +33,7 @@
 
 <fieldset class="form-group">
 <label for="status">Statut</label>
-<input type="text" class="form-control" name="status" id="status" value="${exemplaire.status}" placeholder="" readonly="true" required="required"/>
+<input type="text" class="form-control" name="status" id="status" value="${exemplaire.status}" placeholder="" readonly="true" required="required" />
 </fieldset>
 
 <!--input type="button" class="btn btn-dark text-white" onClick="window.history.back()" value="Retour" /-->
